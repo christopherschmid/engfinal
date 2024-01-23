@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Tree</title>
+  <style>
+    body {
+      font-family: 'Rumi', sans-serif;
+      text-align: center;
+      margin: 0;
+      background-color: #fff; /* Light grey background */
+      color: #34495e; /* Dark text color */
+    }
+
+    h1, h2, p {
+      color: #2980b9; /* Blue headings and paragraphs */
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #05cbfd; /* Hintergrundfarbe des Containers */
+      padding: 20px; /* Innenabstand des Containers */
+      border-radius: 15px; /* Abgerundete Ecken des Containers */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Schatten um den Container */
+    }
+
+    .button, .non-button, .circle {
+      display: inline-block;
+      width: 1000px;
+      height: 50px;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 25px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 40px; /* Erhöhte Schriftgröße */
+      border: none;
+      color: #fff; /* White text color */
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .button {
+      background-color: #27ae60; /* Green button */
+    }
+
+    .non-button {
+      background-color: #e74c3c; /* Red non-button */
+    }
+
+    .family-tree {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .circle {
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+      margin: 10px;
+      padding: 20px;
+      border-radius: 50%;
+      background-color: #f39c12; /* Orange circles */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="button" onclick="openMePage()">ME</div>
+
+    <div class="non-button">Family</div>
+
+    <div class="family-tree">
+      <div class="circle" onclick="openFamilyMemberPage('Dad', 'Dad, Andreas, places great importance on the name Andreas as it reflects his deep-rooted values and heritage. For him, the name symbolizes a strong sense of resilience, determination, and a connection to his family\'s history. The traditional nature of the name holds sentimental value, representing a legacy of strength and perseverance that he wishes to pass on.', 'Dad is proud of me and appreciates the person I have become. He highlights my proactive nature and willingness to take risks. He finds joy in being my father and expresses excitement about my journey.')">Dad</div>
+      <div class="circle" onclick="openFamilyMemberPage('Mum', 'Mom, Monika, loves her name for the joy it brings. It reminds her of the happiness when I was born, creating a special connection between us.', 'Mom reflects on my name, Christopher, linked to carrying Christ\'s spirit. She fondly remembers my birth and the name Noah, chosen for its calming vibe. She praises my curiosity, openness, determination, and adaptability. Mom appreciates my accepting nature and urges me to bring gratitude and respect along. She admires my humor and adventurous spirit, acknowledging past challenges and celebrating the positive qualities that define me.')">Mum</div>
+      <div class="circle" onclick="openMePage()">ME</div>
+      <div class="circle" onclick="openFamilyMemberPage('Julian', 'Julian does not delve into the meaning of his name, but he values its simplicity. It is a name he appreciates without being overly sentimental.', 'Julian admires your direct and honest nature. He highlights your dedication, recalling a time when you brought everyone together through your enthusiasm for board games, resolving conflicts. He also recognizes and appreciates your cleverness.')">Julian</div>
+      <div class="circle" onclick="openFamilyMemberPage('Nicolai', 'Nicolai values his name for its simplicity, appreciating that it\'s not overly complicated. While it may not hold deep significance, he finds comfort in its straightforward nature.', 'Nicolai admires your openness, energy, and zest for life. These qualities stand out to him, making you someone he values for your vibrant and positive approach to living.')">Nicolai</div>
+    </div>
+
+    <div class="non-button">Friends</div>
+
+    <div class="family-tree">
+      <div class="circle" onclick="openFriendPage('Noah', 'Noah sees his name as a reflection of his identity—everything he is. It signifies a sense of camaraderie when addressed by his first name, indicating a good connection. However, in certain contexts like work, formality prevails.', 'According to Noah, you are valued for being friendly, humorous, and easy to talk to. Your non-judgmental attitude allows for relaxed and open conversations on a variety of topics, even unconventional ones like Rammstein. He appreciates your company and considers you a friend with whom he enjoys talking.')">Noah</div>
+      <div class="circle" onclick="openFriendPage('Finn', 'For Finn, his name embodies a sense of adventure and free spirit. It reflects his love for exploration and openness to new experiences. Being addressed by his first name signifies a genuine connection and mutual understanding.', 'Finn values your friendly and lighthearted nature. He appreciates your sense of humor, making interactions enjoyable. Your ability to engage in easygoing and rational conversations on various topics has made you someone Finn enjoys spending time with and considers a good friend.')">Finn</div>
+      <div class="circle" onclick="openFriendPage('Lewin', 'Lewin finds depth in his name, associating it with strength and resilience. It represents his ability to overcome challenges and maintain a solid character. Addressed informally, it reflects a sense of familiarity and closeness.', 'Lewin values your kindness and approachability. He sees you as someone with a calm and understanding demeanor, making conversations comfortable. Your supportive and easy-to-talk-to nature creates a friendship that Lewin appreciates, and he considers you a reliable and trustworthy friend.')">Lewin</div>
+    </div>
+  </div>
+  <script>
+    function openMePage() {
+      const newWindow = window.open('', '_blank');
+      newWindow.document.write(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>ME Page</title>
+          <style>
+            body {
+              font-family: 'Rumi', sans-serif;
+              text-align: center;
+              margin: 0;
+              background-color: #05cbfd; 
+              color: #2c3e50; /* Dark text color */
+            }
+
+            h1, h2, p {
+              color: #FF502B; /* Blue headings and paragraphs */
+            }
+
+            .container {
+              max-width: 800px;
+              margin: 0 auto;
+            }
+
+            .button {
+              display: block;
+              width: 100px;
+              height: 100px;
+              margin: 20px auto;
+              padding: 15px;
+              border-radius: 50%;
+              background-color: #27ae60; /* Green button */
+              color: #27ae60;
+              font-size: 18px;
+              cursor: pointer;
+              text-align: center;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <h1>ME</h1>
+            <h2>Meaning of my name</h2>
+            <p>My name, Christopher, carries profound significance as the bearer of Christus, symbolizing the presence of Christ in my heart wherever I go. It also translates to "The Consecrated." Similarly, Noah, the one who leads out of the flood, represents The Reassuring. My mom associates it with my calm demeanor as a baby, which has evolved into a person full of emotions and energy, maintaining a unique balance.</p>
+            <h2>Who am I'</h2>
+            <p>I define myself by my skills, showcasing what I can achieve based on my knowledge. Proficient in languages, coding, internet science, and mathematics, I exhibit discipline when passionately involved in something. My determination is unwavering, reflecting a commitment that nothing can deter when I'm genuinely interested.</p>
+            <h2>Reputation/importance of my name'</h2>
+            <p>My name is of paramount importance to me, representing my identity. I want it to evoke positive thoughts, mirroring who I truly am rather than conforming to others' expectations. Although I may change over time, the enduring essence of my name remains constant, embodying something good. It holds sentimental value, being the result of my parents' decision and fostering a deep emotional connection as I grew up with it.</p>
+          </div>
+        </body>
+        </html>
+      `);
+    }
+
+  
+    function openFamilyMemberPage(memberName, textNAME, textME) {
+      const newWindow = window.open('', '_blank');
+      newWindow.document.write(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>${memberName}</title>
+          <style>
+            body {
+              font-family: 'Rumi', sans-serif;
+              text-align: center;
+              margin: 0;
+              background-color: #05cbfd; /* Light yellow background */
+              color: #2c3e50; /* Dark text color */
+            }
+
+            h1, h2, p {
+              color: #FF502B; /* Blue headings and paragraphs */
+            }
+
+            .container {
+              max-width: 800px;
+              margin: 0 auto;
+            }
+
+            .button {
+              display: block;
+              width: 100px;
+              height: 100px;
+              margin: 20px auto;
+              padding: 15px;
+              border-radius: 50%;
+              background-color: #27ae60; /* Green button */
+              color: #27ae60;
+              font-size: 18px;
+              cursor: pointer;
+              text-align: center;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <h1>${memberName}</h1>
+            <h2>Their Name</h2>
+            <p>${textNAME}</p>
+            <h2>How They Describe Me</h2>
+            <p>${textME}</p>
+          </div>
+        </body>
+        </html>
+      `);
+    }
+
+    function openFriendPage(friendName, FNtext, FMtext) {
+      const newWindow = window.open('', '_blank');
+      newWindow.document.write(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>${friendName}</title>
+          <style>
+            body {
+              font-family: 'Rumi', sans-serif;
+              text-align: center;
+              margin: 0;
+              background-color: #05cbfd; /* Light yellow background */
+              color: #2c3e50; /* Dark text color */
+            }
+
+            h1, h2, p {
+              color: #FF502B; /* Blue headings and paragraphs */
+            }
+
+            .container {
+              max-width: 800px;
+              margin: 0 auto;
+            }
+
+            .button {
+              display: block;
+              width: 100px;
+              height: 100px;
+              margin: 20px auto;
+              padding: 15px;
+              border-radius: 50%;
+              background-color: #27ae60; /* Green button */
+              color: #27ae60;
+              font-size: 18px;
+              cursor: pointer;
+              text-align: center;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <h1>${friendName}</h1>
+            <h2>Their Name</h2>
+            <p>${FNtext}</p>
+            <h2>How They Describe Me</h2>
+            <p>${FMtext}</p>
+          </div>
+        </body>
+        </html>
+      `);
+    }
+  </script>
+</body>
+</html>

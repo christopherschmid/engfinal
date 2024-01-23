@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protected Page</title>
+</head>
+
+<body>
+  <script>
+    function checkPassword() {
+      var password = prompt("Bitte gib das Passwort ein:");
+      if (password === "EnglishLanteigene112") {
+        window.location.href = "EFP.html";
+      } else {
+        alert("Falsches Passwort. Zugriff verweigert.");
+        // Optional: Redirect to another page or display an error message
+        window.location.href = "error.html";
+      }
+    }
+
+    // Lade die Seite und rufe die Funktion auf
+    window.onload = checkPassword;
+  </script>
+</body>
+
+</html>
